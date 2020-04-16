@@ -1,0 +1,25 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: starkandwayne/concourse
+
+inputs:
+- name: pipeline-tasks
+- name: blob-input
+- name: repository-input
+
+outputs:
+- name: repository-output
+
+run:
+  path: pipeline-tasks/bump-blob.sh
+
+params:
+  CI_BOT_USER:
+  CI_BOT_EMAIL:
+  ACCESS_KEY_ID:
+  SECRET_KEY:
+  BLOB_NAME:
+  BLOB_REGEX:

@@ -1,0 +1,24 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: starkandwayne/concourse
+
+inputs:
+- name: pipeline-tasks
+- name: repository-input
+- name: version-input
+
+outputs:
+- name: repository-output
+- name: release-tarball
+
+run:
+  path: pipeline-tasks/create-release.sh
+
+params:
+  CI_BOT_USER:
+  CI_BOT_EMAIL:
+  ACCESS_KEY_ID:
+  SECRET_KEY:
