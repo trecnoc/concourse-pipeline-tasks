@@ -13,6 +13,7 @@ inputs:
 outputs:
 - name: repository-output
 - name: release-tarball
+- name: notification-output
 
 run:
   path: pipeline-tasks/create-release.sh

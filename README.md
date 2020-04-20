@@ -40,6 +40,9 @@ Create a final Bosh release and export the resulting release.
 
 * `repository-output`: The updated Bosh release Git repository.
 * `release-tarball`: Directory containing the export Bosh release.
+* `notification-output`: Directory containing a notification message file called
+  `message.txt`. This file will have the following message `Successfully built
+  ${RELEASE_NAME} Bosh release version ${RELEASE_VERSION}`
 
 #### Parameters:
 
