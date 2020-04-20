@@ -6,7 +6,8 @@ set -o pipefail
 RELEASE_VERSION=$(cat version-input/version)
 
 cp -r repository-input/. repository-output
-cd repository-output
+
+pushd repository-output
 
 RELEASE_NAME=$(egrep "^(final_)?name:" config/final.yml | cut -d " " -f 2 | xargs)
 
@@ -26,3 +27,9 @@ git add --all
 git status
 git commit -m "Create final release ${RELEASE_VERSION}"
 git tag v${RELEASE_VERSION}
+
+popd
+
+cat << EOF > notification-output/message.txt
+Successfully built ${RELEASE_NAME} Bosh release version ${RELEASE_VERSION}
+EOF
