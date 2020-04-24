@@ -7,7 +7,7 @@ RELEASE_VERSION=$(cat version-input/version)
 
 cp -r repository-input/. repository-output
 
-pushd repository-output
+pushd repository-output > /dev/null
 
 RELEASE_NAME=$(egrep "^(final_)?name:" config/final.yml | cut -d " " -f 2 | xargs)
 
@@ -28,7 +28,7 @@ git status
 git commit -m "Create final release ${RELEASE_VERSION}"
 git tag v${RELEASE_VERSION}
 
-popd
+popd > /dev/null
 
 cat << EOF > notification-output/message.txt
 Successfully built ${RELEASE_NAME} Bosh release version ${RELEASE_VERSION}

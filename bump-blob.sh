@@ -9,7 +9,7 @@ LATEST_VERSION=$(cat blob-input/version)
 BLOB=$(find blob-input -type f \( ! -name sha ! -name url ! -name version \) -printf "%f")
 
 cp -r repository-input/. repository-output
-cd repository-output
+pushd repository-output > /dev/null
 
 OLD_BLOB_PATH=$(bosh blobs --column=path | egrep "${BLOB_REGEX}" || true)
 if [[ ! -z ${OLD_BLOB_PATH} ]]; then
