@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: starkandwayne/concourse-go
+    tag: 1.13
+
+inputs:
+- name: pipeline-tasks
+- name: buildpack-release
+
+outputs:
+- name: buildpack
+- name: notification-output
+
+run:
+  path: pipeline-tasks/package-cached-buildpack.sh
+
+params:
+  STACK:
