@@ -27,6 +27,13 @@ case ${INPUT_TYPE} in
 
     MESSAGE="Successfully mirrored version ${VERSION} of the ${STEMCELL} bosh stemcell"
     ;;
+  minio_cli)
+    printf "Generating notification for the MinIO CLI\n"
+
+    VERSION=$(cat ${INPUT}/version)
+
+    MESSAGE="Successfully mirrored version ${VERSION} of the minio cli"
+    ;;
   *)
     printf "Unknown input type\n"
     MESSAGE=""

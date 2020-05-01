@@ -19,3 +19,4 @@ resource.
 * `INPUT_TYPE`: Input type of the `content-input`. Support the following:
   * `bosh_io_release`: For a bosh-io-release-resource input
   * `bosh_io_stemcell`: For a bosh-io-stemcell-resource input
+  * `minio_cli`: For a MinIO CLI Github release input
