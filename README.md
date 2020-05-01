@@ -3,6 +3,8 @@
 Collection of Concourse pipeline task that can be reused.
 
 * [`bump-blob.yml`](docs/bump-blob.md): Bump a Blob in a Bosh release
+* [`copy-github-release.yml`](docs/copy-github-release.md): Copy a Github Release
+  content (including the release notes)
 * [`create-release.yml`](docs/create-release.md): Create a Bosh Release
 * [`download-mc-cli.yml`](docs/download-mc-cli.md): Download the MinIO CLI from it's
   Github release.
