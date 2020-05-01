@@ -14,3 +14,9 @@ The release name will come from the `release.MF` file inside the bosh release.
 ## Outputs:
 
 * `release-output`: Directory containing the renamed release file.
+
+## Parameters:
+
+* `CUSTOM_FILENAME_PREFIX`: __OPTIONAL.__ Custom filename prefix to use when releases
+  are not following <RELEASE_NAME>-release-<VERSION>.tgz, will instead be 
+  <CUSTOM_FILENAME_PREFIX>-<VERSION>.tgz
