@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: starkandwayne/concourse
+
+inputs:
+- name: pipeline-tasks
+- name: manifest
+
+outputs:
+- name: releases
+
+run:
+  path: pipeline-tasks/download-releases-from-manifest.sh

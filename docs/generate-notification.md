@@ -19,6 +19,7 @@ resource.
 * `INPUT_TYPE`: Input type of the `content-input`. Support the following:
   * `bosh_io_release`: For a bosh-io-release-resource input
   * `bosh_io_stemcell`: For a bosh-io-stemcell-resource input
+  * `concourse`: For a concourse deployment git repository input  
   * `doomsday_bosh`: For a Doomsday Bosh Github release input
   * `doomsday_cli`: For a Doomsday CLI Github release input
   * `minio_cli`: For a MinIO CLI Github release input
