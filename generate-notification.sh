@@ -6,11 +6,13 @@ set -o pipefail
 INPUT=content-input
 NOTIFICATION=notification
 
+if [[ -f ${INPUT}/version ]]; then
+  VERSION=$(cat ${INPUT}/version)
+fi
+
 case ${INPUT_TYPE} in
   bosh_io_release )
     printf "Generating notification for a bosh.io release\n"
-
-    VERSION=$(cat ${INPUT}/version)
 
     tar -xzf ${INPUT}/*.tgz release.MF
     RELEASE=$(egrep "^name:" release.MF | cut -d " " -f 2 | xargs)
@@ -20,23 +22,26 @@ case ${INPUT_TYPE} in
   bosh_io_stemcell )
     printf "Generating notification for a bosh.io stemcell\n"
 
-    VERSION=$(cat ${INPUT}/version)
-
     tar -xzf ${INPUT}/*.tgz stemcell.MF
     STEMCELL=$(egrep "^name:" stemcell.MF | cut -d " " -f 2 | xargs)
 
     MESSAGE="Successfully mirrored version ${VERSION} of the ${STEMCELL} bosh stemcell"
     ;;
+  doomsday_bosh)
+    printf "Generating notification for the Doomsday Bosh Release\n"
+    MESSAGE="Successfully mirrored version ${VERSION} of the doomsday bosh release"
+    ;;
+  doomsday_cli)
+    printf "Generating notification for the Doomsday CLI\n"
+    MESSAGE="Successfully mirrored version ${VERSION} of the doomsday cli"
+    ;;
   minio_cli)
     printf "Generating notification for the MinIO CLI\n"
-
-    VERSION=$(cat ${INPUT}/version)
-
     MESSAGE="Successfully mirrored version ${VERSION} of the minio cli"
     ;;
   *)
     printf "Unknown input type\n"
-    MESSAGE=""
+    MESSAGE="Notification for unknown type"
     ;;
 esac
 
