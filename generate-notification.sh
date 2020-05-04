@@ -8,10 +8,12 @@ NOTIFICATION=notification
 
 if [[ -f ${INPUT}/version ]]; then
   VERSION=$(cat ${INPUT}/version)
+elif [[ -f ${INPUT}/.git/ref ]]; then
+  VERSION=$(cat ${INPUT}/.git/ref)
 fi
 
 case ${INPUT_TYPE} in
-  bosh_io_release )
+  bosh_io_release)
     printf "Generating notification for a bosh.io release\n"
 
     tar -xzf ${INPUT}/*.tgz release.MF
@@ -19,13 +21,17 @@ case ${INPUT_TYPE} in
 
     MESSAGE="Successfully mirrored version ${VERSION} of the ${RELEASE} bosh release"
     ;;
-  bosh_io_stemcell )
+  bosh_io_stemcell)
     printf "Generating notification for a bosh.io stemcell\n"
 
     tar -xzf ${INPUT}/*.tgz stemcell.MF
     STEMCELL=$(egrep "^name:" stemcell.MF | cut -d " " -f 2 | xargs)
 
     MESSAGE="Successfully mirrored version ${VERSION} of the ${STEMCELL} bosh stemcell"
+    ;;
+  concourse)
+    printf "Generating notification for the Concourse Bosh Deployment\n"
+    MESSAGE="Successfully mirrored version ${VERSION} of the concourse bosh deployment"
     ;;
   doomsday_bosh)
     printf "Generating notification for the Doomsday Bosh Release\n"
