@@ -10,8 +10,8 @@ Collection of Concourse pipeline task that can be reused.
   Github release.
 * [`download-releases-from-manifest.yml`](docs/download-releases-from-manifest.md):
   Download Bosh releases specified in a Bosh manifest.
-* [`generate-notification.yml`](docs/generate-notification.md): Generate a notification
-  message.
+* [`generate-mirrored-notification.yml`](docs/generate-mirrored-notification.md):
+  Generate a mirrored notification message.
 * [`package-cached-buildpack.yml`](docs/package-cached-buildpack.md): Package a
   buildpack (expect for **java** and **php**) with all the dependencies cached.
   * `package-cached-java-buildpack.yml`: Package the **java** buildpack with all
