@@ -15,7 +15,8 @@ outputs:
 - name: notification
 
 run:
-  path: pipeline-tasks/generate-notification.sh
+  path: pipeline-tasks/generate-mirrored-notification.sh
 
 params:
   INPUT_TYPE:
+  LABEL:
