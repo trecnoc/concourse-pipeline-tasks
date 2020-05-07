@@ -27,6 +27,8 @@ find ${RELEASE_INPUT} \
   ! -name "tag" \
   ! -name "url" \
   ! -name "version" \
+  ! -name "source.tar.gz" \
+  ! -name "source.zip" \
   -exec cp -v {} ${OUTPUT} \;
 
 if [[ -f ${RELEASE_INPUT}/body ]]; then

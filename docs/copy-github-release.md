@@ -2,8 +2,16 @@
 
 Copy Github release artifacts to a subdirectory of output folder; this subdirectory
 will be named with the version of the release. All files provided by the release
-will be copied except: tag, version, commit_sha and url (which are standard
-files output by the github-release-resource).
+will be copied with the release notes except:
+
+* Standard Github release resource files:
+  * tag
+  * version
+  * commit_sha
+  * url
+* Optional Github release resource files:
+  * source.tar.gz
+  * source.zip
 
 ## Inputs:
 
