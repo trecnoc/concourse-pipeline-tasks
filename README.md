@@ -6,8 +6,6 @@ Collection of Concourse pipeline task that can be reused.
 * [`copy-github-release.yml`](docs/copy-github-release.md): Copy a Github Release
   content (including the release notes)
 * [`create-release.yml`](docs/create-release.md): Create a Bosh Release
-* [`download-mc-cli.yml`](docs/download-mc-cli.md): Download the MinIO CLI from it's
-  Github release.
 * [`download-releases-from-manifest.yml`](docs/download-releases-from-manifest.md):
   Download Bosh releases specified in a Bosh manifest.
 * [`generate-mirrored-notification.yml`](docs/generate-mirrored-notification.md):
