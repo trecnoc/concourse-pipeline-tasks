@@ -30,3 +30,5 @@ will be copied with the release notes except:
 * `RELEASE_NOTE_PREFIX`: Release note prefix when `SKIP_VERSION_SUBDIR` is used,
   in this case the release notes will be `<RELEASE_NOTE_PREFIX>-<VERSION>-release.md`
   instead of `release.md`.
+* `UNCOMPRESS_ARTIFACTS`: If set (to anything other than blank) will uncompress
+  artifacts of type .tgz and .zip.

@@ -31,6 +31,30 @@ find ${RELEASE_INPUT} \
   ! -name "source.zip" \
   -exec cp -v {} ${OUTPUT} \;
 
+if [[ ! -z "${UNCOMPRESS_ARTIFACTS}" ]]; then
+  printf "\nUncompressing .tgz and .zip artifacts\n"
+
+  pushd artifacts > /dev/null
+
+  find . -name '*.tgz' | while read file; do
+    printf "Extracting '%s'\n" ${file}
+    pushd $(dirname ${file}) > /dev/null
+    tar -xzf $(basename ${file})
+    rm $(basename ${file})
+    popd > /dev/null
+  done
+
+  find . -name '*.zip' | while read file; do
+    printf "Extracting '%s'\n" ${file}
+    pushd $(dirname ${file}) > /dev/null
+    unzip -q $(basename ${file})
+    rm $(basename ${file})
+    popd > /dev/null
+  done
+
+  popd > /dev/null
+fi
+
 if [[ -f ${RELEASE_INPUT}/body ]]; then
   printf "\nAdding release notes\n"
   cp ${RELEASE_INPUT}/body ${OUTPUT}/${RELEASE_NOTES}
