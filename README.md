@@ -17,3 +17,4 @@ Collection of Concourse pipeline task that can be reused.
   * `package-cached-php-buildpack.yml`: Package the **php** buildpack with all
   the dependencies cached. See [`package-cached-buildpack.yml`](docs/package-cached-buildpack.md)
 * [`rename-bosh-io-release.yml`](docs/rename-bosh-io-release.md): Rename a Bosh.io release
+* [`stratos-package.yml`](docs/stratos-package.md): Package the Stratos UI with all dependencies
