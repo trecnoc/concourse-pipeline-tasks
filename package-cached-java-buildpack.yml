@@ -13,7 +13,6 @@ inputs:
 
 outputs:
 - name: buildpack
-- name: notification-output
 
 run:
   path: pipeline-tasks/package-cached-buildpack.sh
