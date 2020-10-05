@@ -5,7 +5,6 @@ set -o pipefail
 
 GITHUB_RELEASE=buildpack-release
 BUILDPACK_OUTPUT=buildpack
-NOTIFICATION_OUTPUT=notification-output
 
 DEFAULT_STACK=cflinuxfs3
 BUILD_FOLDER=buildpack-source
@@ -60,7 +59,3 @@ if [[ -f ${GITHUB_RELEASE}/body ]]; then
 else
   printf "WARNING: no release notes provided with the release"
 fi
-
-cat << EOF > ${NOTIFICATION_OUTPUT}/message.txt
-Successfully packaged cached version ${BUILDPACK_VERSION} of the ${BUILDPACK} buildpack
-EOF

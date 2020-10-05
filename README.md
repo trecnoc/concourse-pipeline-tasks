@@ -5,6 +5,7 @@ Collection of Concourse pipeline task that can be reused.
 * [`bump-blob.yml`](docs/bump-blob.md): Bump a Blob in a Bosh release
 * [`copy-github-release.yml`](docs/copy-github-release.md): Copy a Github Release
   content (including the release notes)
+* [`create-buildpack-release.yml`](docs/create-buildpack-release.md): Create a Bosh Release for buildpacks using the provided Cached buildpack
 * [`create-release.yml`](docs/create-release.md): Create a Bosh Release
 * [`download-releases-from-manifest.yml`](docs/download-releases-from-manifest.md):
   Download Bosh releases specified in a Bosh manifest.
