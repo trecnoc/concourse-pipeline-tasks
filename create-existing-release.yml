@@ -1,0 +1,20 @@
+---
+platform: linux
+image_resource:
+  type: registry-image
+  source:
+    repository: starkandwayne/concourse
+
+inputs:
+  - name: pipeline-tasks
+  - name: github-release-input
+
+outputs:
+  - name: release
+  - name: notification
+
+run:
+  path: pipeline-tasks/create-existing-release.sh
+
+params:
+  RELEASE_NAME:
