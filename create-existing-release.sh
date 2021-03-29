@@ -11,7 +11,7 @@ mkdir -p ${BUILD_FOLDER}
 tar -xzf github-release-input/source.tar.gz --strip-components=1 -C ${BUILD_FOLDER}
 
 pushd ${BUILD_FOLDER} >/dev/null
-bosh create-release --final --version="${VERSION}+CUSTOM" --tarball ../release/${RELEASE_NAME}-${VERSION}.tgz
+bosh create-release --version="${VERSION}+CUSTOM" --tarball ../release/${RELEASE_NAME}-${VERSION}.tgz
 popd >/dev/null
 
 if [[ -f github-release-input/body ]]; then
